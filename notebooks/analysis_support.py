@@ -288,3 +288,23 @@ def coverage_over_time(table: pd.DataFrame, time_column='elapsed_time', time_poi
                 coverage_at_breakpoint[j] += 1
 
     return coverage_at_breakpoint
+
+
+def compare_sequences(x: np.ndarray, y: np.ndarray, tol: float=1e-2):
+    """
+    Compares values of both sequences and returns data frames with comparison of values on a per-element basis
+    :param x:
+    :param y:
+    :param tol:
+    :return:
+    """
+
+    disequal = np.abs(x - y) > tol
+    equal = np.abs(x - y) <= tol
+    x_eq_y = np.count_nonzero(equal)
+    x_lt_y = np.count_nonzero(np.logical_and((x < y), disequal))
+    x_gt_y = np.count_nonzero(np.logical_and((x > y), disequal))
+    return pd.DataFrame({
+        'relation': ['<', '=', '>'],
+        'x R y': [x_lt_y, x_eq_y, x_gt_y]
+    })

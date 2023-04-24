@@ -19,9 +19,10 @@ def compare_with_scatter_chart(x, y, title='untitled', x_name='x', y_name='y', x
 
     plt.figure(figsize=(9, 9))
 
-    plt.scatter(x, y, label='data')
+    plt.scatter(x, y)
 
-    plt.plot(x, lin_model.intercept + lin_model.slope * x, 'r', linestyle='--', label='lin. fit')
+    if not paper:
+        plt.plot(x, lin_model.intercept + lin_model.slope * x, 'r', linestyle='--', label='lin. fit')
 
     plt.xlim(min(np.min(x), np.min(y)), max(np.max(x), np.max(y)))
     plt.ylim(min(np.min(x), np.min(y)), max(np.max(x), np.max(y)))
@@ -39,7 +40,8 @@ def compare_with_scatter_chart(x, y, title='untitled', x_name='x', y_name='y', x
     if y_log:
         plt.yscale('log')
 
-    plt.legend()
+    if not paper:
+        plt.legend()
 
     plt.show()
 
