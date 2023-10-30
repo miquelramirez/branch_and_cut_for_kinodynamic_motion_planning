@@ -102,7 +102,7 @@ for key, table in relevant_bnc_tables.items():
 # # Coverage comparison
 
 # In[ ]:
-
+plt.rcParams.update({"font.size": 28})
 
 cmp_classic_configs = [('unknown', 0.5, 'bk'), ('unknown', 0.02, 'bk'), ('unknown', 3e-05, 'bk'), ('polytrace', 0.1, 'bk')]
 bnc_configs = [('cp_sat', 'multi_edge', 'bk'), ('pulse', 'multi_edge', 'bk')]
@@ -203,6 +203,8 @@ different_costs = [v for v in x / y if v != 1.0]
 print('Total samples:', len(x), '# Samples with substantive differences:', len(different_costs))
 
 # %%
+plt.rcParams.update({
+                        "font.size": 20})
 f, ax = plt.subplots()
 
 green_diamond = dict(markerfacecolor='g', marker='D')

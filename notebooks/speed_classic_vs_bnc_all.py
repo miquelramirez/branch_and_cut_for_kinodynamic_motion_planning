@@ -99,7 +99,7 @@ for key, table in relevant_bnc_tables.items():
 # # Coverage comparison, $v_{max} \leq 1.5$
 
 # In[11]:
-
+plt.rcParams.update({"font.size": 28})
 
 cmp_classic_configs = [('unknown', 0.02, 'bk', 1.5), ('polytrace', 0.1, 'bk', 1.5)]
 bnc_configs = [('cp_sat', 'multi_edge', 'bk', 1.5), ('pulse', 'multi_edge', 'bk', 1.5)]
@@ -207,6 +207,7 @@ different_costs = [v for v in x / y if v != 1.0]
 print('Total samples:', len(x), '# Samples with substantive differences:', len(different_costs))
 
 # %%
+plt.rcParams.update({"font.size": 20})
 f, ax = plt.subplots()
 
 ax.violinplot([v for v in x / y if v != 1.0],
@@ -260,7 +261,7 @@ print(lin_model)
 # # Coverage Comparison, $v_{max} \leq 2$
 
 # In[23]:
-
+plt.rcParams.update({"font.size": 28})
 
 cmp_classic_configs = [('unknown', 0.02, 'bk', 2.0), ('polytrace', 0.1, 'bk', 2.0)]
 bnc_configs = [('cp_sat', 'multi_edge', 'bk', 2.0), ('pulse', 'multi_edge', 'bk', 2.0)]
@@ -325,7 +326,7 @@ cmp_table.head()
 # ## Plan costs
 
 # In[26]:
-
+plt.rcParams.update({"font.size": 20})
 
 x = cmp_table['smooth_cost_k.classic'].values
 y = cmp_table['smooth_cost_k.bnc'].values
