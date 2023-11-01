@@ -20,7 +20,7 @@ plt.rcParams.update({
     "text.usetex": True,
     "font.family": "sans-serif",
     "font.sans-serif": ["Helvetica"],
-    "font.size": 20,
+    "font.size": 24,
     "axes.prop_cycle": plt.cycler('color', ['#377eb8', '#ff7f00', '#4daf4a',
                   '#f781bf', '#a65628', '#984ea3',
                   '#999999', '#e41a1c', '#dede00'])})
